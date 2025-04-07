@@ -23,7 +23,7 @@ app.use((req, res, next) => {
     const publicPaths = ['/login', '/register'];
 
     if (publicPaths.includes(req.path)) {
-        return next(); // skip auth check
+        return next(); 
     }
 
     const accessToken = req.cookies.accessToken;
@@ -54,4 +54,4 @@ import route from "./routes/route.js";
 app.use("/", route);
 
 app.listen(port, () => console.log(`Application is running on http:localhost:${port}`));
-
+    
